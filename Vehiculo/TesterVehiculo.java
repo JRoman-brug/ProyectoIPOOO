@@ -30,7 +30,7 @@ public class TesterVehiculo {
         System.out.println("Tiene que pagar: "+autito.getCobrar(tarifa)+" pesos \n");
 
         autito.egresaVehiculo(egresoFija);
-        System.out.println("Resulado esperado 30500 pesos");
+        System.out.println("Resulado esperaasdasdasdsdo 30500 pesos");
         System.out.println("Tiene que pagar: "+autito.getCobrar(tarifa)+" pesos \n");
     }
 }
