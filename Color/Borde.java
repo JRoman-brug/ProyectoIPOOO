@@ -31,11 +31,11 @@ public class Borde {
     }
 
     public boolean equals(Borde b){
-        return (color == obtenerColor())&&(grosor == b.obtenerGrosor());
+        return (color.equals(b.obtenerColor()))&&(grosor == b.obtenerGrosor());
     }
 
     public Borde clone(){
-        return new Borde(grosor, color);
+        return new Borde(grosor, color.clone());
     }
 
     public String toString(){
