@@ -15,9 +15,9 @@ public class Oracion {
 //    Comandos
     public void reducirBlancos(){
         int i = 1,cantBlanco = 1;
-        boolean blanco = false;
+        boolean cantBlancoFinal = false;
 
-        while((i<s.length)&&(!blanco)){
+        while((i<s.length)&&(!cantBlancoFinal)){
 //            Si hay 2 espacios en blanco
             if((s[i-1]==' ')&&(s[i]==' ')){
                 cantBlanco++;
@@ -26,10 +26,9 @@ public class Oracion {
                     s[j-1] = s[j];
                 }
             }else i++;
-//            Veo la cantidad de espacios blanco al final del arreglo
-            if(cantBlanco==(s.length-i)) i=s.length;
+//            Veo la cantidad de espaciaos blanco al final del arreglo
+            if(cantBlanco==(s.length-i)) cantBlancoFinal=true;
         }
-
     }
 
     public void establecerLetra(int pos,char l){
