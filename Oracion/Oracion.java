@@ -1,7 +1,7 @@
-package Oracion;
+ 
 
 public class Oracion {
-//    Atributos de instacia
+//    Atributos de instacia ajdasdgajhgdajhdgakj
     char s[];
 
 //    constructor
