@@ -105,6 +105,7 @@ public class FilaSensores {
         return igualdad;
     }
 
+//    Clone en profundidad
     public FilaSensores clone(){
         FilaSensores nuevaFilaSensores = new FilaSensores(fs.length);
 
@@ -116,10 +117,11 @@ public class FilaSensores {
     }
     public FilaSensores filaCompleta(){
         FilaSensores nuevaFilaSensores = new FilaSensores(fs.length);
+        Sensor nuevoSensor = new Sensor(0,0);
 
         for(int i=0;i<nuevaFilaSensores.cantFila();i++){
             if(fs[i] != null) nuevaFilaSensores.establecerSensor(i+1,fs[i]);
-            else nuevaFilaSensores.establecerSensor(i+1,fs[i]);
+            else nuevaFilaSensores.establecerSensor(i+1,nuevoSensor);
         }
 
         return nuevaFilaSensores;

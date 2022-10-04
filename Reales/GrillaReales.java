@@ -1,4 +1,4 @@
-package Sensor;
+package Reales;
 
 public class GrillaReales {
 //    Atributos de inscia
@@ -45,7 +45,7 @@ public class GrillaReales {
         return intercambio;
     }
 //    Consultas
-    public float obtenreReal(int f,int c){
+    public float obtenerReal(int f,int c){
         return grilla[f][c];
     }
 
@@ -104,7 +104,7 @@ public class GrillaReales {
     public boolean esFilaCreciente(int f){
         boolean creciente = true;
         for(int i=1;i<grilla[f].length && creciente;i++){
-            if(!(grilla[f][i-1]<=grilla[f][i])) creciente = false;
+            if((grilla[f][i-1]>grilla[f][i])) creciente = false;
         }
 
         return creciente;
@@ -113,15 +113,51 @@ public class GrillaReales {
         boolean aux = false;
         int elemConsecutivos = 0;
 
+//        Recorro la matriz
         for(int i=0;i<grilla.length && !aux;i++) {
-            for (int j = 0; j < grilla[0].length && !aux; j++) {
-                if(grilla[i][j]>r) elemConsecutivos++;
-                else elemConsecutivos=0;
+            for (int j = 0; j < grilla[0].length; j++) {
 
-                if(elemConsecutivos==n) aux = true;
+                if (grilla[i][j] > r) elemConsecutivos++;
+                else elemConsecutivos = 0;
+
             }
+            if (elemConsecutivos == n) aux = true;
+            elemConsecutivos=0;
         }
 
         return aux;
     }
+    public boolean esTraspuesta(GrillaReales g){
+        boolean traspuesta = true;
+
+        for(int i=0;i<grilla.length && traspuesta;i++) {
+            for (int j = 0; j < grilla[0].length && traspuesta; j++) {
+                if(grilla[i][j]!= g.traspuesta().obtenerReal(i,j)) traspuesta = false;
+            }
+        }
+        return traspuesta;
+    }
+    public GrillaReales traspuesta(){
+        GrillaReales traspuesta = new GrillaReales(cantFilas(),cantColumnas());
+
+        for(int i=0;i<grilla.length ;i++) {
+            for (int j = 0; j < grilla[0].length ; j++) {
+                traspuesta.establecerReal(i,j,grilla[j][i]);
+            }
+        }
+
+        return traspuesta;
+    }
+
+    public void arrayPrint(){
+        System.out.println("\n el arreglo: ");
+
+        for(int i=0;i<grilla.length ;i++) {
+            for (int j = 0; j < grilla[0].length-1 ; j++) {
+                System.out.print(grilla[i][j]+"  ");
+            }
+            System.out.print(grilla[i][grilla[0].length-1]+"\n");
+        }
+    }
+
 }

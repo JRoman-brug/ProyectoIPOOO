@@ -1,4 +1,5 @@
- 
+package Oracion;
+
 
 public class TesterOracion {
     public static void main(String args[]){
