@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Sensor
+comment1.params=p1\ p2
+comment1.target=Sensor(double,\ double)
+comment10.params=s
+comment10.target=boolean\ equals(Sensor.Sensor)
+comment11.params=
+comment11.target=Sensor.Sensor\ clone()
+comment2.params=p
+comment2.target=void\ establecerP1(double)
+comment3.params=p
+comment3.target=void\ establecerP2(double)
+comment4.params=s
+comment4.target=void\ copy(Sensor.Sensor)
+comment5.params=
+comment5.target=double\ obtenerP1()
+comment6.params=
+comment6.target=double\ obtenerP2()
+comment7.params=
+comment7.target=boolean\ riesgo()
+comment8.params=
+comment8.target=boolean\ emergencia()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=12

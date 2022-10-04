@@ -1,4 +1,4 @@
-package SecuenciaDeEnteros;
+ 
 import IPOO.*;
 public class TestSecuenciaDeEnteros {
     public static void main(String args[]){

@@ -1,4 +1,4 @@
-package Oracion;
+ 
 
 public class Oracion {
 //    Atributos de instacia ajdasdgajhgdajhdgakj

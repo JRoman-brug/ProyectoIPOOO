@@ -1,4 +1,4 @@
-package Sensor;
+ 
 import IPOO.*;
 
 public class testSensor {

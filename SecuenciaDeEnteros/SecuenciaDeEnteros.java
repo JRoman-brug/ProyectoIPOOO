@@ -1,4 +1,4 @@
-package SecuenciaDeEnteros;
+ 
 
 public class SecuenciaDeEnteros {
 //    Atributos de instacia

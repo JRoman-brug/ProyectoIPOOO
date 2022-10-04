@@ -1,4 +1,4 @@
-package Sensor;
+ 
 
 public class OtraFilaSensores {
 //    Atributos de instacia

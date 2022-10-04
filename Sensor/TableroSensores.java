@@ -1,4 +1,4 @@
-package Sensor;
+ 
 
 public class TableroSensores {
 //    Atributos de instacia
@@ -78,11 +78,67 @@ public class TableroSensores {
 
         for(int i =0; i<cantFilas() && !resultado;i++){
             if(grilla[i][c].riesgo()) contRiesgo++;
-
-            if(contRiesgo >= n) resultado = true;
         }
-
+        
+        if(contRiesgo >= n) resultado = true;
+        
         return resultado;
     }
+    public boolean dosCosecutivosEmergenciaFila(int f){
+        boolean dosConsecutivos = false;
+        
+        for(int i=0;i<cantFilas();i++){
+            for(int j=1;j<cantColumnas();j++){
+                if((grilla[i][j-1].riesgo())&&(grilla[i][j].riesgo())) dosConsecutivos = true;
+            }
+        }
+        
+        return dosConsecutivos;
+    }
+    
+    public int contarCoincidencias(TableroSensores gs){
+        // Retorna la cantidad de sensores que, ocupandola misma posicion en las dos grillas, tienen el mismo estado interno
+        int contCoincidencias = 0;
+        
+        if(cantColumnas() == gs.cantFilas()){
+            for(int i=0;i<gs.cantFilas();i++){
+                for(int j=0;j<cantColumnas();j++){
+                    if(grilla[i][j].equals(gs.obtenerSensor(i,j))) contCoincidencias++;
+                }
+            }
+        }
+        
+        return contCoincidencias;
+    }
+    
+    public boolean equals(TableroSensores t){
+        boolean iguales = true;
+        
+        if(cantFilas()==t.cantFilas() && cantColumnas()==t.cantColumnas()){
+                for(int i=0;i<cantFilas()&&iguales;i++){
+                    for(int j=0;j<cantColumnas()&&iguales;j++){
+                        if(!grilla[i][j].equals(t.obtenerSensor(i,j))) iguales = false;
+                }
+            }
+        
+        }
+        return iguales;
+    }
+    
+    public TableroSensores clone(){
+        TableroSensores nuevoTablero = new TableroSensores(cantFilas(),cantColumnas());
+
+        for(int i=0;i<cantFilas();i++){
+            for(int j=0;j<cantColumnas();j++){
+                if(grilla[i][j] != null){
+                    nuevoTablero.establecerSensor(i,j,grilla[i][j].clone());
+                }
+            }
+        }
+        
+        return nuevoTablero;
+    }
+    
 
 }
+

@@ -1,4 +1,4 @@
-package Reales;
+ 
 
 public class GrillaReales {
 //    Atributos de inscia

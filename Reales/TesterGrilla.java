@@ -1,7 +1,6 @@
-package Reales;
+ 
 
 import IPOO.ES;
-import Sensor.Sensor;
 
 public class TesterGrilla {
     public static void main(String ars[]){

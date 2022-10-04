@@ -1,4 +1,4 @@
-package Sensor;
+ 
 
 public class Sensor {
     private static final double max = 0.1;
